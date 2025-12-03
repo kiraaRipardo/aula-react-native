@@ -4,22 +4,39 @@ import { useState } from 'react';
 import { Text, View } from 'react-native';
 
 export function LoginScreen() {
-  const [Login, setLogin, ] = useState('');
+  const [Login, setLogin] = useState('');
   const [Senha, setSenha] = useState('');
+
+  function logar() {
+    console.log('login', Login, 'senha', Senha);
+  }
 
   return (
     <View className="flex-1 items-center justify-center bg-gray-200">
-    <View className="w-full items-center justify-center gap-5 p-5">
-    <Text className="text-3xl ">Login do App</Text>
-    
-        <InputCustomizado placeholder="login" onChangeText= {(text) => {setLogin(text)}}/>
-        <InputCustomizado placeholder="senha" secureTextEntry={true} onChangeText= {(text) => {setSenha(text)}}/>
+      <View className="w-full items-center justify-center gap-5 p-5">
+        <Text className="text-3xl text-gray-700">Login do App</Text>
 
-        <BotaoCustomizado title="Entrar" onPress={() => console.log("login", Login, "senha", Senha)} />
+        <InputCustomizado
+          placeholder="login"
+          onChangeText={(text) => {
+            setLogin(text);
+          }}
+        />
+        <InputCustomizado
+          placeholder="senha"
+          secureTextEntry={true}
+          onChangeText={(text) => {
+            setSenha(text);
+          }}
+        />
+        <BotaoCustomizado title="Entrar" onPress={logar} />
+      </View>
 
-        <Text className=" text-blue-400"> Esqueceu a senha? </Text>
+      <View className="flex-row gap-5">
+        <Text className="text-lg text-blue-400"> Cadastre-se </Text>
+        <Text> | </Text>
+        <Text className=" text-lg text-blue-400"> Esqueceu a senha? </Text>
       </View>
     </View>
   );
 }
-
