@@ -1,5 +1,5 @@
 import { BotaoCustomizado } from '@/components/botaoCustomizado';
-import { InputCustomizado } from '@/components/InputCustomizado';
+import { InputCustomizado } from '@/components/inputCustomizado';
 import { useState } from 'react';
 import { Text, View } from 'react-native';
 
