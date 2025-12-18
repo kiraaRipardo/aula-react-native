@@ -6,17 +6,18 @@ import { Soma } from '@/screens/soma';
 import { ListaScreens } from '@/screens/lista';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/interface/roolPages';
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <>
       <SafeAreaView className="flex-1">
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="Soma" component={Soma} />
-            <Stack.Screen name="Lista" component={ListaScreens} />
+            <Stack.Screen name="login" component={LoginScreen} />
+            <Stack.Screen name="soma" component={Soma} />
+            <Stack.Screen name="lista" component={ListaScreens} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
