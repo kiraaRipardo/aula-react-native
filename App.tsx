@@ -7,6 +7,7 @@ import { ListaScreens } from '@/screens/lista';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/interface/roolPages';
+import { ListaNumScreens } from '@/screens/numero';
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -18,8 +19,10 @@ export default function App() {
             <Stack.Screen name="login" component={LoginScreen} />
             <Stack.Screen name="soma" component={Soma} />
             <Stack.Screen name="lista" component={ListaScreens} />
+            <Stack.Screen name="listanum" component={ListaNumScreens} />
           </Stack.Navigator>
         </NavigationContainer>
+    
       </SafeAreaView>
 
       <StatusBar style="auto" />

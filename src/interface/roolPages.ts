@@ -4,6 +4,7 @@ export type RootStackParamList = {
   login: undefined;
   soma: undefined;
   lista: undefined;
+  listanum: undefined;
 };
 
 export type ProfileScreenNavigationProp = NativeStackNavigationProp<
