@@ -1,7 +1,10 @@
 import { BotaoCustomizado } from '@/components/botaoCustomizado';
 import { InputCustomizado } from '@/components/inputCustomizado';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
+import { storeData } from '@/utils/storage';
+import { getData } from '@/utils/storage';
+
 
 export function ListaNumScreens() {
   const [valor, setValor] = useState('');
@@ -12,11 +15,24 @@ export function ListaNumScreens() {
     if (isNaN(numero)) return;
 
     setLista([...lista, numero]);
+    storeData({ key: 'numeros', value: JSON.stringify([...lista, numero]) });
     setValor('');
   }
    function LimparLista() {
+    storeData({ key: 'numeros', value: JSON.stringify([]) });
     setLista([]);
   }
+
+  async function carregarLista() {
+    const dados = await getData('numeros');
+    if (dados) {
+      setLista(dados);
+    }
+  }
+
+  useEffect(() => {
+    carregarLista();
+  }, []);
 
   return (
     <View className="flex-1 items-center justify-center">

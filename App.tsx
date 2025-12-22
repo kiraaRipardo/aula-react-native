@@ -14,15 +14,15 @@ export default function App() {
   return (
     <>
       <SafeAreaView className="flex-1">
-        <NavigationContainer>
+       {/* <NavigationContainer>
           <Stack.Navigator initialRouteName='login' screenOptions={{headerShown: false}}>
             <Stack.Screen name="login" component={LoginScreen} />
             <Stack.Screen name="soma" component={Soma} />
-            <Stack.Screen name="lista" component={ListaScreens} />
+            <Stack.Screen name="lista" component={ListaScreens} /> 
             <Stack.Screen name="listanum" component={ListaNumScreens} />
           </Stack.Navigator>
-        </NavigationContainer>
-    
+        </NavigationContainer>*/}
+     <ListaNumScreens />
       </SafeAreaView>
 
       <StatusBar style="auto" />
